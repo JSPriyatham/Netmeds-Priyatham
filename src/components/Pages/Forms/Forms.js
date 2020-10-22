@@ -7,6 +7,7 @@ import { createRecord, updateRecords } from '../../../Redux/rootForm/rootFormAct
 import './Forms.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { showToast } from '../../../Services/toastService';
 
 function Forms(props) {
     const listCss = { cursor: 'pointer', listStyle: 'none', margin: '3px', padding: '10px', border: '1px dashed #ddd' }
@@ -59,20 +60,6 @@ function Forms(props) {
         setFormRender([]);
         setShowButton(false);
         showToast('Record created succesfully');
-    }
-
-
-    
-    function showToast(args) {
-        toast.success(args, {
-            position: "top-right",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: false,
-            progress: undefined,
-        });
     }
 
     function updateRecord() {
